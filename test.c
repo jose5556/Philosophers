@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 13:28:43 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/02/05 19:14:05 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/02/20 04:09:44 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,17 +50,14 @@ int	main(int argc, char *argv[])
 	j = 2;
 	k = 3;
 	pthread_mutex_init(&mutex, NULL);
-	/* if (argc != 5 || argc != 6)
-	{
-		printf("argument/s is/are not acceptable");
-		return (1);
-	} */
+	
 	if (pthread_create(&p1, NULL, &random_func, &i) != 0)
 		printf("nop on create\n");
 	if (pthread_create(&p2, NULL, &random_func, &j) != 0)
 		printf("nop on create\n");
 	if (pthread_create(&p3, NULL, &random_func, &k) != 0)
 		printf("nop on create\n");
+
 	pthread_join(p1, NULL);
 	pthread_join(p2, NULL);
 	pthread_join(p3, NULL);
