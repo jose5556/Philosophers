@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 12:47:38 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/02/05 20:28:47 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/02/20 05:12:32 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,14 @@
 #define ERROR_MESSAGE_NUM_OF_PHILOS "ERROR! You need to insert \
 at least one philosopher!"
 
-#define ERROR_MESSAGE_INPUT_NUMS "ERROR! certificate that you are \
+#define ERROR_MESSAGE_INPUT_NUMS "ERROR! Make sure you are \
 using valid integers as input!"
+
+# define ALIVE 1
+# define DEAD 2
+# define EATING 3
+# define SLEEPING 4
+# define THINKING 5
 
 typedef struct s_table
 {
@@ -45,17 +51,19 @@ typedef struct s_table
 typedef struct s_philo
 {
 	int				id;
-	int				numsof_meals;
-	pthread_t		philo_thread;
-	pthread_mutex_t	*right_fork;
-	pthread_mutex_t	left_fork;
+	int				status;
+	int				nums_of_meals;
+	pthread_t		*philo_thread;
 	time_t			start_time;
 	time_t			last_meal;
 	t_table			*table;
+	pthread_mutex_t	*right_fork;
+	pthread_mutex_t	left_fork;
 }	t_philo;
 
 //init
-//void	init();
+t_table	init_table(char **argv, int argc);
+t_philo	*init_philo(t_table table);
 
 //utils
 int		ft_atoi(const char *str);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
+#    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/17 12:48:47 by joseoliv          #+#    #+#              #
-#    Updated: 2025/02/05 20:29:59 by joseoliv         ###   ########.fr        #
+#    Updated: 2025/02/17 04:38:38 by cereais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,11 @@ INCLUDE	= -lpthread
 
 SRC = 	src/main.c \
 		\
+		src/validation_input/validate_args.c \
+		\
 		src/utils/ft_atoi.c \
 		\
-		src/validation_input/validate_args.c \
+		src/init/init.c \
 
 OBJ = $(SRC:.c=.o)
 
