@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_args.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 19:50:52 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/02/05 20:13:49 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/02/17 04:23:49 by cereais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ bool	validate_args(int argc, char **argv)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	if (argv[1][0] == '0' && !(argv[1][1]))
 	{
 		printf("%s\n", ERROR_MESSAGE_NUM_OF_PHILOS);
