@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cereais <cereais@student.42.fr>            +#+  +:+       +#+        */
+/*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 18:09:40 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/02/20 05:28:33 by cereais          ###   ########.fr       */
+/*   Updated: 2025/02/25 06:33:06 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char *argv[])
 {
-	t_philo	*philo;
+	t_philo	*philos;
 	t_table	table;
 
 	if (argc < 5 || argc > 6)
@@ -24,7 +24,8 @@ int	main(int argc, char *argv[])
 	}
 	else if (!validate_args(argc, argv))
 		return (1);
-	table = init_table(argv + 1, argc);
-	philo = init_philo(table);
-	init_threads(philo);
+	table = init_table(argc, argv);
+	philos = init_philos(&table);
+	init_threads(philos);
+	last_th_handler(philos);
 }
