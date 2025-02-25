@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cereais <cereais@student.42.fr>            +#+  +:+       +#+         #
+#    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/17 12:48:47 by joseoliv          #+#    #+#              #
-#    Updated: 2025/02/17 04:38:38 by cereais          ###   ########.fr        #
+#    Updated: 2025/02/25 06:42:44 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 
-CC = cc -g
+CC = cc
 
 INCLUDE	= -lpthread
 
@@ -20,9 +20,16 @@ SRC = 	src/main.c \
 		\
 		src/validation_input/validate_args.c \
 		\
-		src/utils/ft_atoi.c \
+		src/utils/ft_atoi.c src/utils/time.c \
 		\
 		src/init/init.c \
+		\
+		src/mutex/mutex_funcs_1.c src/mutex/mutex_funcs_2.c \
+		\
+		src/simulation/handle_simulation.c src/simulation/monitoring.c \
+		src/simulation/single_philo.c \
+		\
+		src/threads_handler/last_th_handler.c \
 
 OBJ = $(SRC:.c=.o)
 
