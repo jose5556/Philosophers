@@ -6,31 +6,31 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 06:00:53 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/02/25 06:30:27 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:43:11 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../include/philo.h"
+#include "../../include/philo.h"
 
 int	monitoring(t_philo *philos)
 {
-	int			n;
+	int			i;
 	int			count;
 	long long	diff_time;
 
-	n = 0;
+	i = 0;
 	count = 0;
-	while (n < philos->table->numbers_of_philosophers)
+	while (i < philos->table->numbers_of_philosophers)
 	{
 		diff_time = get_time() - get_info_long(&philos->table->info, \
-			&philos[n].last_meal);
+			&philos[i].last_meal);
 		if (philos->table->time_to_die <= diff_time && \
-		get_info_int(&philos[n].philo, &philos[n].status) != EATING)
-			return (dead_print(&philos[n]));
+		get_info_int(&philos[i].philo, &philos[i].status) != EATING)
+			return (dead_print(&philos[i]));
 		if (philos->table->number_of_times_to_eat == \
-			get_info_long(&philos[n].philo, &philos[n].number_of_meal))
+			get_info_long(&philos[i].philo, &philos[i].number_of_meal))
 			count++;
-		n++;
+		i++;
 	}
 	if (philos->table->numbers_of_philosophers == count)
 		set_bool(&philos->table->info, &philos->table->finish, true);

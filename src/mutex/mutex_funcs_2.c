@@ -6,11 +6,11 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 06:03:09 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/02/25 06:03:26 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:42:36 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../include/philo.h"
+#include "../../include/philo.h"
 
 int	get_info_int(pthread_mutex_t *mutex, int *info)
 {

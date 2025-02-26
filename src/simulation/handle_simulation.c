@@ -6,11 +6,11 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 05:38:52 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/02/25 06:30:03 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:43:12 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../include/philo.h"
+#include "../../include/philo.h"
 
 void	*rotine(void *arg)
 {

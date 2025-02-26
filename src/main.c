@@ -6,11 +6,11 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 18:09:40 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/02/25 06:33:06 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:42:23 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../include/philo.h"
+#include "../include/philo.h"
 
 int	main(int argc, char *argv[])
 {

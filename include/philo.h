@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 12:47:38 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/02/25 06:29:44 by joseoliv         ###   ########.fr       */
+/*   Created: 2025/02/26 11:47:04 by joseoliv          #+#    #+#             */
+/*   Updated: 2025/02/26 11:49:54 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FHILO_H
-#define FHILO_H
+#ifndef PHILO_H
+# define PHILO_H
 
 # include <stdio.h>
 # include <unistd.h>
@@ -21,15 +21,15 @@
 # include <sys/time.h>
 # include <stdbool.h>
 
-#define ERROR_MESSAGE_NUM_OF_ARGS "ERROR! Please enter: <./philo> \
+# define ERROR_MESSAGE_NUM_OF_ARGS "ERROR! Please enter: <./philo> \
 <number_of_philosophers> \
 <time_to_die> <time_to_eat> <time_to_sleep> \
 <number_of_times_each_philosopher_must_eat>"
 
-#define ERROR_MESSAGE_NUM_OF_PHILOS "ERROR! You need to insert \
+# define ERROR_MESSAGE_NUM_OF_PHILOS "ERROR! You need to insert \
 at least one philosopher!"
 
-#define ERROR_MESSAGE_INPUT_NUMS "ERROR! Make sure you are \
+# define ERROR_MESSAGE_INPUT_NUMS "ERROR! Make sure you are \
 using valid integers as input!"
 
 # define ALIVE 1
@@ -79,7 +79,8 @@ bool		validate_args(int argc, char **argv);
 
 //mutex
 void		set_info_int(pthread_mutex_t *mutex, int *value, int info);
-void		set_info_long(pthread_mutex_t *mutex, long long *value, long long info);
+void		set_info_long(pthread_mutex_t *mutex, long long *value,
+				long long info);
 void		set_bool(pthread_mutex_t *mutex, bool *value, bool info);
 void		lock_forks(t_philo *philo);
 void		unlock_forks(t_philo *philo);
@@ -95,6 +96,7 @@ void		thinking(t_philo *philo);
 int			monitoring(t_philo *philos);
 int			dead_print(t_philo *philo);
 int			handle_one_philo(t_philo *philo);
+void		*single_rotine(void *data);
 
 //threads_handler
 void		last_th_handler(t_philo *philos);

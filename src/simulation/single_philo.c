@@ -6,13 +6,13 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 05:14:20 by joseoliv          #+#    #+#             */
-/*   Updated: 2025/02/25 06:26:35 by joseoliv         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:43:08 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../include/philo.h"
+#include "../../include/philo.h"
 
-static void	*single_rotine(void *data)
+void	*single_rotine(void *data)
 {
 	t_philo	*philo;
 
